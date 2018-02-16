@@ -13,20 +13,20 @@
 
 #include <Multitasking/IRTask.h>
 #include <HumanInterfaceDevices/IRJoystick.h>
-#include <RobotDrive/IRCANRobotDrive.h>
+#include <RobotDrive/IRRobotDrive.h>
 
 namespace IR {
 
 class IRDriverOne: public IRTask {
 public:
-	IRDriverOne(IR::IRJoystick *_joystick, IR::IRCANRobotDrive *_myDrive);
+	IRDriverOne(IR::IRJoystick *_joystick, IR::IRRobotDrive *_myDrive);
 	virtual ~IRDriverOne();
 
 	virtual void Run();
 
 protected:
 	IRJoystick *joystick;
-	IRCANRobotDrive *myDrive;
+	IRRobotDrive *myDrive;
 };
 
 } /* namespace IR */

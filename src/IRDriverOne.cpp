@@ -9,7 +9,7 @@
 
 namespace IR {
 
-IRDriverOne::IRDriverOne(IR::IRJoystick *_joystick, IR::IRCANRobotDrive *_myDrive) {
+IRDriverOne::IRDriverOne(IR::IRJoystick *_joystick, IR::IRRobotDrive *_myDrive) {
 	joystick = _joystick;
 	myDrive = _myDrive;
 }
