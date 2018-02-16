@@ -20,15 +20,15 @@
 class Robot: public frc::SampleRobot {
 	//							  FL, RL, FR, RR
 	IR::IRRobotDrive myDrive	 {1,  0,  2,  3, IR::Tank};
-	IR::IRJoystick 		joystick {0},
-						gamePad{1};
+	IR::IRJoystick 		gamePad1 {0},
+						gamePad2{1};
 
 	frc::SendableChooser<std::string> chooser;
 	const std::string autoNameDefault = "Default";
 	const std::string autoNameCustom = "My Auto";
 
-	IR::IRDriverOne driverOneTask {&joystick, &myDrive};
-	IR::IRDriverTwo driverTwoTask {&gamePad};
+	IR::IRDriverOne driverOneTask {&gamePad1, &myDrive};
+	IR::IRDriverTwo driverTwoTask {&gamePad2};
 
 //	ADIS16448_IMU *imu;
 
@@ -79,18 +79,6 @@ public:
 
 			SmartDashboard::PutBoolean("Driver One Task", driverOneTask.isEnabled());
 			SmartDashboard::PutBoolean("Driver Two Task", driverTwoTask.isEnabled());
-
-			SmartDashboard::PutNumber("Joy-Y", joystick.GetY());
-			SmartDashboard::PutNumber("Joy-Y-DeadZoned", joystick.GetYDeadZoned());
-
-			SmartDashboard::PutNumber("Joy-X", joystick.GetX());
-			SmartDashboard::PutNumber("Joy-X-DeadZoned", joystick.GetXDeadZoned());
-
-			SmartDashboard::PutNumber("Joy-Z", joystick.GetZ());
-			SmartDashboard::PutNumber("Joy-Z-DeadZoned", joystick.GetZDeadZoned());
-
-			SmartDashboard::PutNumber("Joy-Throttle", joystick.GetThrottle());
-			SmartDashboard::PutNumber("Joy-Throttle-Leveled", joystick.GetLeveledThrottle());
 
 			// wait for a motor update time
 			frc::Wait(0.005);
