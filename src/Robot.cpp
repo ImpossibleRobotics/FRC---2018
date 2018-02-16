@@ -6,7 +6,7 @@
 #include <string>
 
 #include <HumanInterfaceDevices/IRJoystick.h>
-#include <RobotDrive/IRCANRobotDrive.h>
+#include <RobotDrive/IRRobotDrive.h>
 
 #include <Joystick.h>
 #include <SampleRobot.h>
@@ -19,7 +19,7 @@
 
 class Robot: public frc::SampleRobot {
 	//							  FL, RL, FR, RR
-	IR::IRCANRobotDrive myDrive	 {1,  0,  2,  3, IR::Mecanum};
+	IR::IRRobotDrive myDrive	 {1,  0,  2,  3, IR::Tank};
 	IR::IRJoystick 		joystick {0},
 						gamePad{1};
 
