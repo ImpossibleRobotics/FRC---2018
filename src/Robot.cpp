@@ -94,6 +94,11 @@ public:
 
 	}
 
+	void Disabled() override {
+		driverOneTask.Pause();
+		driverTwoTask.Pause();
+	}
+
 private:
 };
 
