@@ -41,7 +41,7 @@ public:
 		chooser.AddObject(autoNameCustom, autoNameCustom);
 		frc::SmartDashboard::PutData("Auto Modes", &chooser);
 
-		myDrive.SetMotorsInverted(false, false, true, true);
+//		myDrive.SetMotorsInverted(false, false, true, true); Not needed, is taken into account in TankDrive
 	}
 
 	/*
