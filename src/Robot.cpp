@@ -41,7 +41,7 @@ public:
 		chooser.AddObject(autoNameCustom, autoNameCustom);
 		frc::SmartDashboard::PutData("Auto Modes", &chooser);
 
-		myDrive.SetMotorsInverted(true, true, true, true); //Was needed because the motors are inverted :P
+		myDrive.SetMotorsInverted(false, false, false, false); //Was needed because the motors are inverted :P
 	}
 
 	/*
